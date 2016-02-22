@@ -1,10 +1,17 @@
 <html>
 <head>
 	<title>Javascript Box - OOP demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<style type="text/css">
+		body {
+			background-color: rgb(245,245,245);
+			overflow: hidden; 
+		}
+	</style>
 </head>
 <body>
 
-	<svg id="svg" xmlns="http://www.w3.org/2000/svg"></svg>
+	<svg id="svg" class='svg' xmlns="http://www.w3.org/2000/svg" stroke='green' stroke-width="2"></svg>
 
 	<script>
 	function Circle(cx, cy, html_id)
@@ -30,7 +37,7 @@
 				  	cy: this.info.cy,
 				  	r:  10,
 				  	id: html_id,
-				  	style: "fill: black"
+				  	style: "fill: yellow"
 				});
 
 			document.getElementById('svg').appendChild(circle);
@@ -40,11 +47,11 @@
 			var el = document.getElementById(html_id);
 
 			//see if the circle is going outside the browser. if it is, reverse the velocity
-			if( this.info.cx > document.body.clientWidth || this.info.cx < 0)
+			if( this.info.cx > document.body.clientWidth - 20 || this.info.cx < 0)
 			{
 				this.info.velocity.x = this.info.velocity.x * -1;
 			}
-			if( this.info.cy > document.body.clientHeight || this.info.cy < 0)
+			if( this.info.cy + 20 > document.body.clientHeight || this.info.cy < 0)
 			{
 				this.info.velocity.y = this.info.velocity.y * -1;
 			}
@@ -98,7 +105,8 @@
 	document.onclick = function(e) {
 		playground.createNewCircle(e.x,e.y);
 	}
-	
+	console.log(document.body.clientWidth);
+	console.log(document.body.clientHeight); 
 	</script>
 
 </body>
