@@ -3,16 +3,16 @@
 	<title>Random Balls</title>
 	<meta charset='UTF-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta http-equiv="refresh" content="1">
 	<style type="text/css">
 		body {
-			background: linear-gradient(240deg, rgb(230,230,230), rgb(180,180,180), rgb(240,240,240));
+			background: linear-gradient(80deg, rgb(230,230,230), rgb(180,180,180), rgb(240,240,240));
 			overflow: hidden;
-			z-index: 1; 
 		}
 		.header {
 			z-index: -1;
 			position: fixed;   
-			margin: 10% 13%; 
+			margin: 10% 14%; 
 			text-align: center;  
 			background-color: rgb(210,210,210);
 		}
@@ -47,7 +47,7 @@
 			//create a circle 
 			var radius; 
 			var color; 
-			if (time_pressed > 150 && time_pressed < 280){
+			if (time_pressed > 150 && time_pressed < 300){
 				radius = 15; 
 				strokeColor = 'darkorange';
 			} else if (time_pressed > 280){
