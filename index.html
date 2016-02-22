@@ -1,16 +1,30 @@
-<html>
+<html lang='en'>
 <head>
-	<title>Javascript Box - OOP demo</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Random Balls</title>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<style type="text/css">
 		body {
-			background: linear-gradient(90deg, rgb(230,230,230), rgb(180,180,180), rgb(240,240,240));
-			overflow: hidden; 
+			background: linear-gradient(240deg, rgb(230,230,230), rgb(180,180,180), rgb(240,240,240));
+			overflow: hidden;
+			z-index: 1; 
 		}
+		.header {
+			z-index: -1;
+			position: fixed;   
+			margin: 10% 13%; 
+			text-align: center;  
+			background-color: rgb(210,210,210);
+		}
+		h1 {color: grey;}
+		h3 {color: orange;}
 	</style>
 </head>
 <body>
-
+	<div class="header">
+		<h1>Random Balls</h1>
+		<h3>Hey, It's Jose again! Click on the screen to create a ball. The longer you press down, the larger the ball. Have fun!!!</h3>
+	</div>
 	<svg id="svg" xmlns="http://www.w3.org/2000/svg" stroke='green' stroke-width="3">L</svg>
 
 	<script>
@@ -100,8 +114,8 @@
 			}
 		}
 
-		this.createNewCircle = function(x,y,time_pressed){
-			var new_circle = new Circle(x,y,counter++,time_pressed);
+		this.createNewCircle = function(x,y,pressed){
+			var new_circle = new Circle(x,y,counter++,pressed);
 			circles.push(new_circle);
 			// console.log('created a new circle!', new_circle);
 		}
